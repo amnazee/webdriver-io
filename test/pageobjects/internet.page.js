@@ -125,7 +125,7 @@ class Internet {
      */
     async dragColumnAToColumnB() {
         await this.columnA.waitForDisplayed()
-        await this.columnA.dragAndDrop(this.columnB)
+        await this.columnA.dragAndDrop(await this.columnB)
     }
 
     /**
