@@ -54,9 +54,9 @@ class Internet {
     /** 
      * Click the Enable/Disable Button
      */
-    clickEnableButton() {
-        this.enableButton.waitForDisplayed()
-        this.enableButton.click()
+    async clickEnableButton() {
+        await this.enableButton.waitForDisplayed()
+        await this.enableButton.click()
     }
 
     /** 
