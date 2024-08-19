@@ -105,9 +105,9 @@ class Internet {
         await this.dropdownMenuOption1.click()
     }
 
-    clickDropdownMenuOption2() {
-        this.dropdownMenuOption2.waitForDisplayed()
-        this.dropdownMenuOption2.click()
+    async clickDropdownMenuOption2() {
+        await this.dropdownMenuOption2.waitForDisplayed()
+        await this.dropdownMenuOption2.click()
     }
 
 

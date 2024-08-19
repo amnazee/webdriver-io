@@ -7,4 +7,12 @@ describe("Dropdown menu",function(){
         await internetPage.clickDropdownMenuOption1()
         assert.equal(true,await internetPage.dropdownMenuOption1.isSelected())
     })
+
+    it('should select option 2',async()=>{
+        // browser.url(`${browser.options.baseUrl}/dropdown`)
+
+        await internetPage.clickDropdownMenu()
+        await internetPage.clickDropdownMenuOption2()
+        assert.equal(true,await internetPage.dropdownMenuOption2.isSelected())
+    })
 })
