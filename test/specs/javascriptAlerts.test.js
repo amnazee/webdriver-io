@@ -7,12 +7,28 @@ describe('Javascript Alerts',function(){
         await internetPage.clickJavascriptAlertButton(1)
         assert.equal('I am a JS Alert',await browser.getAlertText())
         console.log(await browser.getAlertText());
-        await browser.pause(5000)
+        // await browser.pause(5000)
     })
 
 
     it('Should accept alert',async ()=>{
-        await browser.acceptAlert()
+        browser.acceptAlert()
         assert.equal("You successfully clicked an alert", await internetPage.getResultText())
     })
+
+  it('Should dismiss alert',async()=>{
+        await internetPage.clickJavascriptAlertButton(2)
+        browser.dismissAlert()
+        assert.equal("You clicked: Cancel", await internetPage.getResultText())
+    })
+
+
+    it('Should send text to the alert',async()=>{
+        await internetPage.clickJavascriptAlertButton(3)
+        await browser.sendAlertText('This is some text')
+        browser.acceptAlert()
+        assert.equal('You entered: This is some text',await internetPage.getResultText())
+        browser.pause(3000)
+    })
+
 })
