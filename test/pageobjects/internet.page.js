@@ -95,14 +95,14 @@ class Internet {
     /** 
      * Click the dropdown Button
      */
-    clickDropdownMenu() {
-        this.dropdownMenu.waitForDisplayed()
-        this.dropdownMenu.click()
+    async clickDropdownMenu() {
+        await this.dropdownMenu.waitForDisplayed()
+        await this.dropdownMenu.click()
     }
 
-    clickDropdownMenuOption1() {
-        this.dropdownMenuOption1.waitForDisplayed()
-        this.dropdownMenuOption1.click()
+    async clickDropdownMenuOption1() {
+        await this.dropdownMenuOption1.waitForDisplayed()
+        await this.dropdownMenuOption1.click()
     }
 
     clickDropdownMenuOption2() {
@@ -116,7 +116,7 @@ class Internet {
      */
     async dragDraggableToDroppable() {
         await this.draggable.waitForDisplayed()
-        await this.draggable.dragAndDrop(this.droppable)
+        await this.draggable.dragAndDrop(await this.droppable)
 
     }
 
