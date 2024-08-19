@@ -9,8 +9,6 @@ describe("Wait for Enabled",function(){
         await internetPage.enableButton.click()
         await internetPage.inputEnabledField.waitForEnabled({timeout:4000})
         expect(await internetPage.inputEnabledField)
-        // expect(internetPage.inputEnabledField).not.toBeDisabled()
-        // expect(internetPage.enableButton).toHaveAttribute('autocomplete','off')
     })
 
     it('should wait for the input field to be displayed',async()=>{

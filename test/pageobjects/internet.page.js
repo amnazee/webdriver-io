@@ -70,9 +70,9 @@ class Internet {
     /** 
      * Click the Example Button
      */
-    clickExampleButton() {
-        this.exampleButton.waitForDisplayed()
-        this.exampleButton.click()
+    async clickExampleButton() {
+        await this.exampleButton.waitForDisplayed()
+        await this.exampleButton.click()
     }
     /**
      * Clicks the delete button
