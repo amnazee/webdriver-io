@@ -29,5 +29,4 @@ describe('Javascript Alerts',function(){
         // assert.equal('You entered: This is some text',await internetPage.getResultText())
         browser.pause(3000)
     })
-
 })
