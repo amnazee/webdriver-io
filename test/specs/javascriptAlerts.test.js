@@ -22,11 +22,10 @@ describe('Javascript Alerts',function(){
         assert.equal("You clicked: Cancel", await internetPage.getResultText())
     })
 
-
     it('Should send text to the alert',async()=>{
         await internetPage.clickJavascriptAlertButton(3)
         await browser.sendAlertText('This is some text')
-        browser.acceptAlert()
+        await browser.acceptAlert()
         assert.equal('You entered: This is some text',await internetPage.getResultText())
         browser.pause(3000)
     })
