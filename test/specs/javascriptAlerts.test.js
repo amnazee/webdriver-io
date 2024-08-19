@@ -9,4 +9,10 @@ describe('Javascript Alerts',function(){
         console.log(await browser.getAlertText());
         await browser.pause(5000)
     })
+
+
+    it('Should accept alert',async ()=>{
+        await browser.acceptAlert()
+        assert.equal("You successfully clicked an alert", await internetPage.getResultText())
+    })
 })
