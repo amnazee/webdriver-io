@@ -87,9 +87,9 @@ class Internet {
      * Click the specified javascript alert button
      * @param {Number} index the index of the element
      */
-    clickJavascriptAlertButton(index) {
-        this.javascriptAlertButton(index).waitForDisplayed()
-        this.javascriptAlertButton(index).click()
+    async clickJavascriptAlertButton(index) {
+        await this.javascriptAlertButton(index).waitForDisplayed()
+        await this.javascriptAlertButton(index).click()
     }
 
     /** 
@@ -109,7 +109,6 @@ class Internet {
         await this.dropdownMenuOption2.waitForDisplayed()
         await this.dropdownMenuOption2.click()
     }
-
 
     /**
      * Drag and drop
