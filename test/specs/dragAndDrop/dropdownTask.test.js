@@ -1,32 +1,12 @@
-const dropdownPage=require('../dragAndDrop/dropdown.page')
+const dropdownTask=require('./AssertionsDropdown.test')
 
-class DropdownTask{
 
-    async openDropdown(){
-        browser.url(`${browser.options.baseUrl}/dropdown`)
-        await dropdownPage.clickDropdownMenu()
-    }
 
-    async clickDropdownMenuOption(index) {
-        await dropdownPage.dropdownOptions(index).waitForDisplayed()
-        await dropdownPage.dropdownOptions(index).click()
-    }
-
-    async getSelectedOptionText() {
-        const selectedOption = await dropdownPage.dropdownMenu.$$('option');
-        for (const option of selectedOption) {
-            const isSelected = await option.getAttribute('selected');
-            if (isSelected !== null) {
-                console.log(option.getText());
-                return await option.getText();
-            }
-        }
-    }
-
-   async getSelectedOption(expectedText){
-    const selectedText=await this.getSelectedOptionText()
-    assert.equal(expectedText,await selectedText)
-   }
-}
-
-module.exports=new DropdownTask()
+describe('User is on dropdown page',function(){
+    it('and user selects option 1 from the dropdown', async()=>{
+        await dropdownTask.openDropdown()
+        await dropdownTask.clickDropdownMenuOption(2)
+        await browser.pause(5000)
+        await dropdownTask.getSelectedOption('Option 1')
+    })
+})
