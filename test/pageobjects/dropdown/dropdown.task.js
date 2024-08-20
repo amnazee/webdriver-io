@@ -1,4 +1,4 @@
-const dropdownLocators = require('../../locators/dropdown.locators')
+const dropdownLocators = require('./dropdown.locators')
 
 class DropdownTask{
 
