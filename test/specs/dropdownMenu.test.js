@@ -4,7 +4,7 @@ describe("Dropdown menu",function(){
     it('should select option 1',async()=>{
         browser.url(`${browser.options.baseUrl}/dropdown`)
         await internetPage.clickDropdownMenu()
-        await internetPage.clickDropdownMenuOption1()
+        await internetPage.clickDropdownMenuOption1() //change it to single function
         assert.equal(true,await internetPage.dropdownMenuOption1.isSelected())
     })
 
