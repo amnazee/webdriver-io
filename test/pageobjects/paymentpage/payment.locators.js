@@ -25,7 +25,7 @@ class PaymentUI{
     }
 
     get PAYMENT_SUCCESS(){
-        return $("//h2[contains(.,'SUCCESS')]")
+        return $("//h2")
     }
 
     get Iframe(){

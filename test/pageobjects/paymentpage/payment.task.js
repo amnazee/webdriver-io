@@ -25,7 +25,7 @@ class PaymentTask{
 
 
     async clickPay(){
-        await PaymentUI.PAY_BUTTON.click()
+        await PaymentUI.CONFIRM_PAYMENT_BUTTON.click()
     }
 
 
