@@ -24,6 +24,8 @@ class PaymentTask{
 
     async clickPay(){
         await PaymentUI.confirmPaymentButton.click()
+        await browser.pause(5000)
+
     }
 
 }

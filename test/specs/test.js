@@ -23,7 +23,7 @@ describe("User is on the temperature page",function(){
         await TemperatureAssertions.TemperatureHeadingPresent();
         await TemperatureAssertions.productDescriptionAssertion(1, jsonData.MoisturizerMessage);
         await TemperatureAssertions.productDescriptionAssertion(2, jsonData.SunscreenMessage);
-        //close it here 
+
 
     });
 
@@ -58,6 +58,7 @@ describe("User is on the temperature page",function(){
     it("User is on payment page and successfully makes a payment",async()=>{
         await paymentTask.switchToIframe();
         await paymentTask.enterData(); 
+        await paymentTask.clickPay()
         await paymentAssertion.paymentSuccessful()
     })
 })
