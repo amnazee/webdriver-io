@@ -1,0 +1,29 @@
+{
+    "Moisturizers": [
+        "Mikhail Almond and Talc",
+        "Max honey and almond moisturiser",
+        "Jose Intensive Care Aloe Body Lotion",
+        "Mikhail Natural Almond Moisturizer",
+        "Alexander Almond & Honey Moisturiser",
+        "Emmanuel Aloe Vera Beauty Gel",
+        "Vassily Aloe Attack",
+        "Tigran Aloe Isolani",
+        "Wilhelm Aloe Hydration Lotion",
+        "Boris Almond and Honey"
+    ],
+    "Sunscreens": [
+        "Magnus Resistant Sunscreen SPF-30",
+        "Vassily Brilliant SPF-30",
+        "Vishy La Shield Sunscreen SPF-30",
+        "Paul Magnificient SPF-30",
+        "Robert Herbals Sunblock SPF-40",
+        "Akiba Amazing SPF-50",
+        "Anatoly Ultra Sunblock SPF-50",
+        "Vladimir Sun Expert SPF-30",
+        "Gary Bio Sandalwood SPF-50"
+    ],
+
+    "MoisturizerMessage": "Don't let cold weather ruin your skin. Use your favourite moisturizer and keep your skin stay young.",
+
+    "SunscreenMessage": "Treat your skin right. Don't leave your home without your favorite sunscreen. Say goodbye to sunburns."
+}
