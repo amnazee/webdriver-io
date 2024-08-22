@@ -1,10 +1,10 @@
 class SuncscreenUI{
 
-    get SunscreenHeading(){
+    get sunscreenHeading(){
         return $('h2')
     }
 
-    get CartValue(){
+    get cartValue(){
         return $("//span[@id='cart']")
     }
 

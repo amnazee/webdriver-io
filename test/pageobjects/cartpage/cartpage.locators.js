@@ -1,14 +1,14 @@
 class CartUI{
 
-    get Heading(){
+    get heading(){
         return $('//h2')
     }
 
-    get CART_TOTAL_AMOUNT(){
+    get cartTotalAmount(){
         return $("//p[@id='total']")
     }
 
-    get PAY_BUTTON(){
+    get payButton(){
         return $("//button[@class='stripe-button-el']")
     }
 

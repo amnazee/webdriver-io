@@ -4,11 +4,11 @@ class TemperatureUI{
         return $(`(//button[contains(@class, 'btn-primary')])[${index}]`)
     }
 
-    get Temperature(){
+    get temperature(){
         return $('span#temperature')
     }
 
-    get TemperatureHeading(){
+    get temperatureHeading(){
         return $('h2')
     }
 

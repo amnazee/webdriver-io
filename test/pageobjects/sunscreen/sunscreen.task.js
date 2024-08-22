@@ -5,13 +5,13 @@ const data=require('../../testData/data.json')
 class SunscreenTask{
 
     async verifySunscreenPageHeader(){
-        const headingText= await sunscreenUI.SunscreenHeading.getText()
+        const headingText= await sunscreenUI.sunscreenHeading.getText()
         console.log("Heading of moisturizer page: "+headingText);
         return headingText;
     }
 
     async getCartValue(){
-        const cartValue=await sunscreenUI.CartValue.getText()
+        const cartValue=await sunscreenUI.cartValue.getText()
         console.log("Cart value"+cartValue);
         return cartValue;
     }
@@ -106,7 +106,7 @@ class SunscreenTask{
         await browser.pause(2000);
         await this.scrollToTop()
         await browser.waitUntil(async () => {
-            return (await sunscreenUI.SunscreenHeading.isDisplayed()); 
+            return (await sunscreenUI.sunscreenHeading.isDisplayed()); 
         }, {
             timeout: 5000,
             timeoutMsg: 'Moisturizer page did not load correctly'

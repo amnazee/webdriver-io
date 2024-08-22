@@ -25,10 +25,10 @@ class CartAssertion{
 
     async verifyTotalPrice(expectedTotalPrice) {
         // Wait for the cart total price element to be visible
-        console.log(await cartUI.CART_TOTAL_AMOUNT.isDisplayed());
-        await cartUI.CART_TOTAL_AMOUNT.waitForDisplayed(); 
+        console.log(await cartUI.cartTotalAmount.isDisplayed());
+        await cartUI.cartTotalAmount.waitForDisplayed(); 
         // Get the displayed total price from the cart
-        const displayedTotalPriceText = await cartUI.CART_TOTAL_AMOUNT.getText();
+        const displayedTotalPriceText = await cartUI.cartTotalAmount.getText();
         // Remove any non-numeric characters from the displayed price (e.g., currency symbols)
         const displayedTotalPrice = parseFloat(displayedTotalPriceText.replace(/[^0-9.-]+/g, ""));
         // Log the values for debugging
@@ -36,7 +36,7 @@ class CartAssertion{
         console.log(`Expected Total Price: ${expectedTotalPrice}`);
         // Verify that the displayed total price matches the expected total price
         expect(displayedTotalPrice).to.be.closeTo(expectedTotalPrice, 0.01, 'Total price does not match');
-        await cartUI.PAY_BUTTON.click()
+        await cartUI.payButton.click()
     }
 }
 

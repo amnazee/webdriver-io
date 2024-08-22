@@ -4,8 +4,8 @@ const cartUI=require('../cartpage/cartpage.locators')
 class CartTask{
 
     async getHeading(){
-        await cartUI.Heading.waitForDisplayed()
-        const heading=await cartUI.Heading.getText()
+        await cartUI.heading.waitForDisplayed()
+        const heading=await cartUI.heading.getText()
         console.log("CART PAGE HEADING: "+heading);
         return heading;
     }
@@ -27,7 +27,7 @@ class CartTask{
 
     async returnToCartPage(){
         browser.url(`${browser.options.baseUrl}/cart`)
-        await cartUI.Heading.waitForDisplayed()
+        await cartUI.heading.waitForDisplayed()
         browser.pause(2000)
     }
 

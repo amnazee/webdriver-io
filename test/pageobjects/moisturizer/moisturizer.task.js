@@ -5,13 +5,13 @@ const data=require('../../testData/data.json')
 class MoisturizerTask{
 
     async verifyMoisturizerPageHeader(){
-        const headingText= await moisturizerUI.MoisturizerHeading.getText()
+        const headingText= await moisturizerUI.moisturizerHeading.getText()
         console.log("Heading of moisturizer page: "+headingText);
         return headingText;
     }
 
     async getCartValue(){
-        const cartValue=await moisturizerUI.CartValue.getText()
+        const cartValue=await moisturizerUI.cartValue.getText()
         console.log("Cart value"+cartValue);
         return cartValue;
     }
@@ -106,7 +106,7 @@ class MoisturizerTask{
         await browser.pause(2000);
         await this.scrollToTop()
         await browser.waitUntil(async () => {
-            return (await moisturizerUI.MoisturizerHeading.isDisplayed()); 
+            return (await moisturizerUI.moisturizerHeading.isDisplayed()); 
         }, {
             timeout: 5000,
             timeoutMsg: 'Moisturizer page did not load correctly'

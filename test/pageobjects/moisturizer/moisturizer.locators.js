@@ -1,10 +1,10 @@
 class MoisturizerUI{
 
-    get MoisturizerHeading(){
+    get moisturizerHeading(){
         return $('h2')
     }
 
-    get CartValue(){
+    get cartValue(){
         return $("//span[@id='cart']")
     }
 
