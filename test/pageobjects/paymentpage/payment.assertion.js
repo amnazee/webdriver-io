@@ -5,8 +5,8 @@ class PaymentAssertion{
     async paymentSuccessful(){
         await paymentTask.clickPay()
         await browser.pause(5000)
-        await paymentUI.PAYMENT_SUCCESS.waitForDisplayed()
-        assert.equal("PAYMENT SUCCESS",await paymentUI.PAYMENT_SUCCESS.getText())
+        await paymentUI.paymentSuccess.waitForDisplayed()
+        assert.equal("PAYMENT SUCCESS",await paymentUI.paymentSuccess.getText())
         await browser.pause(5000)
     }
 }

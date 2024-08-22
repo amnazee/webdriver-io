@@ -8,26 +8,23 @@ class PaymentTask{
         await browser.switchToFrame(iframe);
         await browser.pause(5000)
     }
-
     
     async enterData(){
-        await PaymentUI.EMAIL_INPUT.setValue(jsonData.Email);
-        await PaymentUI.CARD_NUMER.click();
-        await browser.keys(jsonData.Card_Number);
-        await PaymentUI.EXP_DATE_INPUT.click()
-        await browser.keys(jsonData.Date)
-        await PaymentUI.CVC_INPUT.click()
-        await browser.keys(jsonData.CVC)
-        await PaymentUI.ZIP_CODE_INPUT.click()
-        await browser.keys(jsonData.ZIP_CODE)
+        await PaymentUI.emailInput.setValue(jsonData.email);
+        await PaymentUI.cardNumber.click();
+        await browser.keys(jsonData.cardNumber);
+        await PaymentUI.expiryDateInput.click()
+        await browser.keys(jsonData.date)
+        await PaymentUI.cvcInput.click()
+        await browser.keys(jsonData.cvc)
+        await PaymentUI.zipCodeInput.click()
+        await browser.keys(jsonData.zipCode)
         await browser.pause(5000)
     }
 
-
     async clickPay(){
-        await PaymentUI.CONFIRM_PAYMENT_BUTTON.click()
+        await PaymentUI.confirmPaymentButton.click()
     }
-
 
 }
 

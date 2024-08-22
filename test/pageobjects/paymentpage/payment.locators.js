@@ -1,30 +1,30 @@
 class PaymentUI{
 
-    get EMAIL_INPUT(){
+    get emailInput(){
         return $("#email")
     }
 
-    get CARD_NUMER(){
+    get cardNumber(){
         return $("//input[@id='card_number']")
     }
 
-    get EXP_DATE_INPUT(){
+    get expiryDateInput(){
         return $("//input[@id='cc-exp']")
     }
 
-    get CVC_INPUT(){
+    get cvcInput(){
         return $("//input[@id='cc-csc']")
     }
 
-    get ZIP_CODE_INPUT(){
+    get zipCodeInput(){
         return $("//input[@name='zip']")
     }
 
-    get CONFIRM_PAYMENT_BUTTON(){
+    get confirmPaymentButton(){
         return $("//span[@class='iconTick']")
     }
 
-    get PAYMENT_SUCCESS(){
+    get paymentSuccess(){
         return $("//h2")
     }
 
@@ -32,11 +32,11 @@ class PaymentUI{
         return $("//iframe[@class='stripe_checkout_app']")
     }
 
-    get PAY_BUTTON(){
+    get payButton(){
         return $("//button[@class='stripe-button-el']")
     }
     
-    get Header(){
+    get header(){
         return $("//h1")
     }
 }
