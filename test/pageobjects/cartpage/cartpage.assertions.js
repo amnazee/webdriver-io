@@ -20,6 +20,7 @@ class CartAssertion{
         console.log(headers[1]);
         assert.strictEqual(headers[1], "Price", 'The second header is not "Price"');
         console.log('Both headers are verified successfully.');
+        console.log("new");
     }
 
 
