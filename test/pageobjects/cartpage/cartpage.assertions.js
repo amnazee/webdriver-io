@@ -14,6 +14,7 @@ class CartAssertion{
         // Get the headers text using the task function
         const headers = await cartTask.getTableHeaders();
         console.log(headers[0]);
+        console.log("New values: "+headers[1]);
         // Verify that the first header is "Item"
         assert.strictEqual(headers[0], "Item", 'The first header is not "Item"');
         // Verify that the second header is "Price"
