@@ -16,17 +16,14 @@ class MoisturizerUI{
         return "//p[@class='font-weight-bold top-space-10']";
     }
 
-    // Method to get a specific product name by index
     productName(index) {
         return $(`(${this.productNameSelector})[${index}]`);
     }
 
-    // Method to get a specific product price by index
     productPrice(index) {
         return $(`(${this.productPriceSelector})[${index}]`);
     }
 
-    // Method to get the count of all product prices
     async getProductPriceCount() {
         return await $$(this.productPriceSelector).length;
     }

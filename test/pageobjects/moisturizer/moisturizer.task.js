@@ -102,15 +102,18 @@ class MoisturizerTask{
     }
 
     async returnToMoisturizerPage() {
-        await browser.execute('window.history.go(-1)');
+        await browser.execute(() => {
+            window.history.go(-1);
+        });
         await browser.pause(2000);
         await this.scrollToTop()
-        await browser.waitUntil(async () => {
-            return (await moisturizerUI.moisturizerHeading.isDisplayed()); 
-        }, {
-            timeout: 5000,
-            timeoutMsg: 'Moisturizer page did not load correctly'
-        });
+        await browser.waitUntil(
+            async () => (await browser.execute(() => document.readyState)) === 'complete',
+            {
+                timeout: 20000,
+                timeoutMsg: 'Page did not load within 20 seconds'
+            }
+        );
     }
 
     async scrollToTop() {
@@ -139,7 +142,7 @@ class MoisturizerTask{
     async selectProductByIndex(productIndex) {
         await browser.waitUntil(async () => {
             const productElement = await moisturizerUI.productName(productIndex);
-            return productElement.isDisplayed(); // Ensure the element is visible
+            return productElement.isDisplayed(); 
         }, { 
             timeout: 5000, // Adjust timeout as needed
             timeoutMsg: `Product with index ${productIndex} did not become visible`

@@ -38,6 +38,9 @@ describe("User is on the temperature page",function(){
              totalPrice=await moisturizerTask.clickOnThreeCheapestProducts();
              await moisturizerAssertion.assertCartValueBeforeAndAfterSelection(initialCartValue);
              await moisturizerUI.cartButton.click()
+             await moisturizerTask.returnToMoisturizerPage()
+             await moisturizerTask.selectProductByIndex(2)
+             await moisturizerUI.cartButton.click()
          }
           else {
              await sunscreenTask.verifySunscreenPageHeader();
