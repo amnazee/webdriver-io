@@ -1,0 +1,25 @@
+name: New Jenkins Job
+
+on:
+  workflow_dispatch:
+    inputs:
+      job_name:
+        description: 'Jenkins job name'
+        required: true
+        default: 'newjob'
+
+jobs:
+  trigger-jenkins:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Trigger Jenkins Job
+        run: |
+          JOB_URL="http://18.189.201.56:8080/job/${{ github.event.inputs.job_name }}/buildWithParameters"
+          echo "Triggering Jenkins Job URL: $JOB_URL"
+          curl -X POST "$JOB_URL" \
+          --user "${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }}" \
+          --data-urlencode "token=${{ secrets.JENKINS_TOKEN }}"
