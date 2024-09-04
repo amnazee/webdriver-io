@@ -1,7 +1,12 @@
-name: New Trigger Jenkins Job
+name: Trigger Jenkins Job
 
 on:
   workflow_dispatch:
+    inputs:
+      job_name:
+        description: 'Jenkins job name'
+        required: true
+        default: 'default-job-name'
 
 jobs:
   trigger-jenkins:
@@ -10,15 +15,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-      
-      - name: Fetch Jenkins Crumb
-        id: fetch-crumb
-        run: |
-          CRUMB=$(curl -s -u "${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }}" "${{ secrets.JENKINS_URL }}/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,\":\",//crumb)")
-          echo "::set-output name=crumb::$CRUMB"
 
-      - name: Trigger Jenkins Job via Curl
-        run: |
-          curl -X POST "${{ secrets.JENKINS_URL }}/job/${{ secrets.JENKINS_NAME }}/buildWithParameters" \
-          --user "${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }}" \
-          --data-urlencode "token=${{ secrets.JENKINS_TOKEN }}"
+      - name: Trigger Jenkins Job
+        uses: appleboy/jenkins-action@master
+        with:
+          url: ${{ secrets.JENKINS_URL }}
+          user: ${{ secrets.JENKINS_USER }}
+          token: ${{ secrets.JENKINS_TOKEN }}
+          job: ${{ github.event.inputs.job_name }}
+          method: 'POST'
