@@ -6,7 +6,11 @@ on:
       job_name:
         description: 'Jenkins Job Name'
         required: true
-        default: 'default-job-name'
+        default: 'default-job-name'  # Set a default job name
+      build_parameter:
+        description: 'Build Parameter for Jenkins'
+        required: false
+        default: 'default-value'  # Optional, with a default value
 
 jobs:
   trigger-jenkins:
@@ -18,12 +22,12 @@ jobs:
 
       - name: Trigger Jenkins Job via Curl
         run: |
-          curl -X POST "$JENKINS_URL/job/$JOB_NAME/build" \
-          --user "$JENKINS_USER:$JENKINS_TOKEN" \
-          --data-urlencode "token=$JENKINS_TOKEN"
+          curl -X POST "${{ secrets.JENKINS_URL }}/job/${{ github.event.inputs.job_name }}/buildWithParameters" \
+          --user "${{ secrets.JENKINS_USER }}:${{ secrets.JENKINS_TOKEN }}" \
+          --data-urlencode "token=${{ secrets.JENKINS_TOKEN }}" \
+          --data-urlencode "PARAM_NAME=${{ github.event.inputs.build_parameter }}"
           
     env:
       JENKINS_URL: ${{ secrets.JENKINS_URL }}
       JENKINS_USER: ${{ secrets.JENKINS_USER }}
       JENKINS_TOKEN: ${{ secrets.JENKINS_TOKEN }}
-      JOB_NAME: ${{ github.event.inputs.job_name }}
