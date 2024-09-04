@@ -18,7 +18,7 @@ jobs:
 
       - name: Trigger Jenkins Job via Curl
         run: |
-          curl -X POST "$JENKINS_URL/job/$JOB_NAME/buildWithParameters" \
+          curl -X POST "$JENKINS_URL/job/$JOB_NAME/build" \
           --user "$JENKINS_USER:$JENKINS_TOKEN" \
           --data-urlencode "token=$JENKINS_TOKEN"
           
